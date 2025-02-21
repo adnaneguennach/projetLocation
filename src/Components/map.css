@@ -1,0 +1,16 @@
+.map-wrap {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Set height to half of the viewport height */
+    border-radius: 8px; /* Add rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    margin-bottom: 1rem; /* Add some space below the map */
+  }
+  
+  .map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border radius from parent */
+  }
