@@ -37,31 +37,26 @@ export default function Component() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <Link to="#">
-              <ShirtIcon className="h-6 w-6" />
-              <span className="sr-only">ShadCN</span>
-            </Link>
+          
             <div className="grid gap-2 py-6">
               <Link to="/dashboard" className="flex w-full items-center py-2 text-lg font-semibold">
                 Home
               </Link>
               
-              <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold">
-                Services
+              <Link to="/my-listings" className="flex w-full items-center py-2 text-lg font-semibold">
+              Demande Reservation
               </Link>
-              <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold">
-                Portfolio
+              <Link to="/my-requests" className="flex w-full items-center py-2 text-lg font-semibold">
+              Mes Reservations
+
               </Link>
-              <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold">
-                Contact
+              <Link to="/form" className="flex w-full items-center py-2 text-lg font-semibold">
+              Add Listing
               </Link>
             </div>
           </SheetContent>
         </Sheet>
-        <Link to="#" className="mr-6 hidden lg:flex">
-          <ShirtIcon className="h-6 w-6" />
-          <span className="sr-only">ShadCN</span>
-        </Link>
+      
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuLink asChild>

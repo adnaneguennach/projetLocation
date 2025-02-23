@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useNavigate } from "react-router-dom";
+import imglog from '../assets/login.jpg'
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen w-full bg-gray-50">
       <div className="hidden md:flex w-1/2 bg-gray-100 items-center justify-center">
         <img
-          src="https://source.unsplash.com/800x600/?technology"
+          src={imglog}
           alt="Login"
           className="object-cover w-full h-full rounded-lg shadow-md"
         />

@@ -20,21 +20,18 @@ export default function Map({ announcements = [], onClick }) {
       zoom: zoom
     });
 
-    // Initialize markers array
     map.current.markers = [];
 
     if (onClick) {
       map.current.on('click', (e) => {
-        e.preventDefault(); // Prevent default behavior
+        e.preventDefault(); 
         const { lng, lat } = e.lngLat;
         onClick({ lng, lat });
         
-        // Add a marker at the clicked location
         const marker = new maptilersdk.Marker()
           .setLngLat([lng, lat])
           .addTo(map.current);
 
-        // Add popup to marker
         const popup = new maptilersdk.Popup({ offset: 25 }).setHTML(`
           <div>
             <h3>Selected Location</h3>
@@ -45,7 +42,6 @@ export default function Map({ announcements = [], onClick }) {
 
         marker.setPopup(popup).togglePopup();
 
-        // Clear previous markers
         map.current.markers.forEach(marker => marker.remove());
         map.current.markers = [marker];
       });
@@ -55,17 +51,14 @@ export default function Map({ announcements = [], onClick }) {
   useEffect(() => {
     if (!map.current) return;
 
-    // Clear existing markers
     map.current.markers.forEach(marker => marker.remove());
     map.current.markers = [];
 
-    // Add markers for each announcement
     announcements.forEach((announcement) => {
       const marker = new maptilersdk.Marker()
         .setLngLat([announcement.lng, announcement.lat])
         .addTo(map.current);
 
-      // Add popup to marker
       const popup = new maptilersdk.Popup({ offset: 25 }).setHTML(`
         <div>
           <h3>${announcement.title}</h3>
